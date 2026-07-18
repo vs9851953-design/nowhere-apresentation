@@ -1,0 +1,74 @@
+{
+  "cliente": "Nome do Cliente",
+  "projeto": "Redesign de Identidade Digital",
+  "subtitulo": "Uma nova presença visual para redes sociais",
+
+  "capa": {
+    "logo": "assets/logo.png"
+  },
+
+  "introducao": {
+    "eyebrow": "Sobre o Projeto",
+    "titulo": "O que fizemos",
+    "texto": "Descreva aqui, em um ou dois parágrafos curtos, o contexto do projeto, o desafio do cliente e a direção criativa adotada pelo estúdio.",
+    "imagem": "assets/hero.png"
+  },
+
+  "secoes": {
+    "feed": {
+      "eyebrow": "Feed",
+      "titulo": "Grade de Publicações",
+      "imagens": [
+        "gallery/feed/01.png",
+        "gallery/feed/02.png",
+        "gallery/feed/03.png"
+      ]
+    },
+    "stories": {
+      "eyebrow": "Stories",
+      "titulo": "Conteúdo Vertical",
+      "imagens": [
+        "gallery/stories/01.png",
+        "gallery/stories/02.png",
+        "gallery/stories/03.png"
+      ]
+    },
+    "destaques": {
+      "eyebrow": "Destaques",
+      "titulo": "Categorias Fixadas no Perfil",
+      "imagens": [
+        "gallery/highlights/01.png",
+        "gallery/highlights/02.png",
+        "gallery/highlights/03.png"
+      ]
+    },
+    "perfil": {
+      "eyebrow": "Perfil",
+      "titulo": "Instagram Completo",
+      "imagens": [
+        "gallery/profile/01.png"
+      ]
+    },
+    "paleta": {
+      "eyebrow": "Paleta de Cores",
+      "titulo": "Cores da Marca",
+      "imagens": [
+        "gallery/colors/01.png",
+        "gallery/colors/02.png"
+      ]
+    },
+    "tipografia": {
+      "eyebrow": "Tipografia",
+      "titulo": "Fontes Utilizadas",
+      "imagens": [
+        "gallery/fonts/01.png",
+        "gallery/fonts/02.png"
+      ]
+    }
+  },
+
+  "revisao": {
+    "eyebrow": "Apresentação Completa",
+    "titulo": "Visão Geral do Projeto"
+  }
+}
