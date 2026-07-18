@@ -1,5 +1,5 @@
 {
-  "cliente": "Nome do Cliente",
+  "cliente": "Renée Dominik",
   "projeto": "Redesign de Identidade Digital",
   "subtitulo": "Uma nova presença visual para redes sociais",
 
@@ -21,7 +21,10 @@
       "imagens": [
         "gallery/feed/01.jpg",
         "gallery/feed/02.jpg",
-        "gallery/feed/03.jpg"
+        "gallery/feed/03.jpg",
+        "gallery/feed/04.jpg",
+        "gallery/feed/05.jpg",
+        "gallery/feed/06.jpg"
       ]
     },
     "stories": {
@@ -30,7 +33,10 @@
       "imagens": [
         "gallery/stories/01.png",
         "gallery/stories/02.png",
-        "gallery/stories/03.png"
+        "gallery/stories/03.png",
+        "gallery/stories/04.png",
+        "gallery/stories/05.png"
+        
       ]
     },
     "destaques": {
@@ -39,7 +45,9 @@
       "imagens": [
         "gallery/highlights/01.png",
         "gallery/highlights/02.png",
-        "gallery/highlights/03.png"
+        "gallery/highlights/03.png",
+        "gallery/highlights/04.png",
+        "gallery/highlights/05.png"
       ]
     },
     "perfil": {
