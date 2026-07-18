@@ -46,15 +46,16 @@
         "gallery/highlights/01.png",
         "gallery/highlights/02.png",
         "gallery/highlights/03.png",
-        "gallery/highlights/04.png",
-        "gallery/highlights/05.png"
+        "gallery/highlights/04.png"
       ]
     },
     "perfil": {
       "eyebrow": "Perfil",
       "titulo": "Instagram Completo",
       "imagens": [
-        "gallery/profile/01.png"
+        "gallery/profile/01.png",
+        "gallery/profile/02.png",
+        "gallery/profile/03.png"
       ]
     },
     "paleta": {
