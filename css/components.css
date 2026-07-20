@@ -111,7 +111,7 @@
    =========================== */
 
 .gallery-grid.feed .gallery-item{
-  aspect-ratio:1/1;      /* proporção de cada card do feed */
+  aspect-ratio:3/4;      /* proporção de cada card do feed */
 }
 
 .gallery-grid.feed .gallery-item img{
@@ -125,11 +125,12 @@
    =========================== */
 
 .gallery-grid.colors .gallery-item{
-  aspect-ratio:1/1;      /* proporção de cada card da paleta */
+  aspect-ratio:16/9;      /* proporção de cada card da paleta */
+  background:transparent;
 }
 
 .gallery-grid.colors .gallery-item img{
-  object-fit:cover;      /* cover = preenche e corta; contain = encaixa inteira, sem cortar */
+  object-fit:contain;      /* cover = preenche e corta; contain = encaixa inteira, sem cortar */
 }
 
 
@@ -139,11 +140,12 @@
    =========================== */
 
 .gallery-grid.fonts .gallery-item{
-  aspect-ratio:1/1;      /* proporção de cada card de tipografia */
+  aspect-ratio:16/9;      /* proporção de cada card de tipografia */
+  background:transparent;
 }
 
 .gallery-grid.fonts .gallery-item img{
-  object-fit:cover;      /* cover = preenche e corta; contain = encaixa inteira, sem cortar */
+  object-fit:contain;      /* cover = preenche e corta; contain = encaixa inteira, sem cortar */
 }
 
 
