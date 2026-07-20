@@ -46,7 +46,7 @@
 /* ---------- etapa 1: capa ---------- */
 .slide-cover{ align-items:center; text-align:center; padding-top:0; }
 .cover-logo{
-  width:96px; height:96px; object-fit:contain; margin:0 auto 40px;
+  width:220px; height:220px; object-fit:contain; margin:0 auto 40px;
   opacity:0; transform:translateY(14px);
   transition:opacity .8s var(--ease), transform .8s var(--ease);
 }
@@ -67,7 +67,7 @@
   display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;
 }
 @media (max-width:860px){ .slide-intro .wrap{ grid-template-columns:1fr; gap:32px; } }
-.intro-media{ border-radius:var(--radius); overflow:hidden; border:1px solid var(--white-10); }
+.intro-media{ border-radius:var(--radius); overflow:hidden; border:0px solid var(--white-10); }
 .intro-media img{ width:100%; height:auto; display:block; }
 .intro-text{ font-size:18px; line-height:1.65; color:var(--white-70); max-width:480px; }
 
