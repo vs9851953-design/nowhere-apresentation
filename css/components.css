@@ -1,0 +1,257 @@
+/* ==========================================================================
+   COMPONENTS.CSS
+   Painel de configuração visual da apresentação.
+
+   COMO USAR ESTE ARQUIVO
+   -----------------------------------------------------------------------
+   Este arquivo tem duas partes:
+
+   1) MOTOR DA GALERIA — regras estruturais compartilhadas por todos os
+      tipos de galeria (grid, scroll, hover, formato dos elementos).
+      Normalmente você NÃO precisa mexer aqui.
+
+   2) CONFIGURAÇÃO POR SEÇÃO — um bloco separado para cada tipo de galeria
+      (FEED, PALETA, TIPOGRAFIA, STORIES, HIGHLIGHTS, PERFIL). É aqui que
+      você mexe. Cada bloco reúne, num só lugar, tudo que costuma mudar
+      de cliente para cliente: proporção da imagem (aspect-ratio), o
+      recorte/encaixe da imagem (object-fit), largura, altura e o espaço
+      entre os cards (gap). Edite só o bloco da seção que quer mudar —
+      as outras seções não são afetadas.
+   ========================================================================== */
+
+
+/* ---------- progress bar (topo, fixa) ---------- */
+.progress-bar{
+  position:fixed; top:0; left:0; right:0; z-index:600;
+  display:flex; gap:6px; padding:20px 24px 0;
+}
+.progress-seg{
+  flex:1; height:2px; background:var(--white-10); border-radius:2px; overflow:hidden;
+}
+.progress-seg::after{
+  content:''; display:block; height:100%; width:0%; background:var(--orange);
+  transition:width .4s var(--ease);
+}
+.progress-seg.done::after{ width:100%; }
+.progress-seg.active::after{ width:100%; }
+.progress-bar.hidden{ opacity:0; pointer-events:none; transition:opacity .5s var(--ease); }
+
+
+/* ==========================================================================
+   MOTOR DA GALERIA — não editar
+   Regras estruturais compartilhadas por todas as seções: layout de grid,
+   comportamento de scroll, animação de hover, forma dos elementos.
+   Os TAMANHOS (aspect-ratio, largura, altura, gap, object-fit) NÃO ficam
+   aqui — cada seção define os seus próprios, mais abaixo.
+   ========================================================================== */
+
+/* grid usado por Feed, Paleta e Tipografia */
+.gallery-grid{
+  display:grid; grid-template-columns:repeat(3, 1fr); gap:20px;
+}
+@media (max-width:860px){ .gallery-grid{ grid-template-columns:repeat(2, 1fr); gap:12px; } }
+
+.gallery-item{
+  position:relative; overflow:hidden; border-radius:var(--radius);
+  background:var(--pure-black);
+}
+.gallery-item img{
+  width:100%; height:100%;
+  transform:scale(1.02); filter:saturate(.92);
+  transition:transform .8s var(--ease), filter .5s var(--ease);
+}
+.gallery-item:hover img{ transform:scale(1.08); filter:saturate(1.08); }
+
+/* faixa horizontal usada por Stories */
+.stories-track{
+  display:flex; overflow-x:auto; scroll-snap-type:x mandatory;
+  padding-bottom:8px; -ms-overflow-style:none; scrollbar-width:none;
+}
+.stories-track::-webkit-scrollbar{ display:none; }
+.story-item{
+  flex:0 0 auto; border-radius:14px; overflow:hidden; scroll-snap-align:start;
+  border:1px solid var(--white-10); background:var(--pure-black);
+}
+.story-item img{ width:100%; height:100%; }
+
+/* faixa de círculos usada por Highlights */
+.highlights-track{
+  display:flex; overflow-x:auto; padding-bottom:8px;
+  -ms-overflow-style:none; scrollbar-width:none;
+}
+.highlights-track::-webkit-scrollbar{ display:none; }
+.highlight-item{
+  flex:0 0 auto; display:flex; flex-direction:column; align-items:center; gap:10px;
+}
+.highlight-circle{
+  border-radius:50%; overflow:hidden;
+  border:2px solid var(--white-10); transition:border-color .3s var(--ease);
+  padding:3px; background:var(--black);
+}
+.highlight-item:hover .highlight-circle{ border-color:var(--orange); }
+.highlight-circle img{ width:100%; height:100%; border-radius:50%; }
+.highlight-label{ font-family:var(--mono); font-size:11px; letter-spacing:.05em; text-transform:uppercase; color:var(--white-45); }
+
+/* quadro único usado por Perfil */
+.single-frame{
+  border-radius:var(--radius); overflow:hidden; border:1px solid var(--white-10);
+  margin:0 auto;
+}
+.single-frame img{ width:100%; display:block; }
+
+
+/* ==========================================================================
+   CONFIGURAÇÃO POR SEÇÃO
+   Edite livremente daqui para baixo. Cada bloco é independente.
+   ========================================================================== */
+
+/* ===========================
+   FEED
+   Grade de publicações (grid 3 colunas / 2 no mobile, definido no motor acima)
+   =========================== */
+
+.gallery-grid.feed .gallery-item{
+  aspect-ratio:3/4;      /* proporção de cada card do feed */
+}
+
+.gallery-grid.feed .gallery-item img{
+  object-fit:cover;      /* cover = preenche e corta; contain = encaixa inteira, sem cortar */
+}
+
+
+/* ===========================
+   PALETA
+   Cores da marca (imagens PNG)
+   =========================== */
+
+.gallery-grid.colors .gallery-item{
+  aspect-ratio:4/3;      /* proporção de cada card da paleta */
+  background:transparent;
+}
+
+.gallery-grid.colors .gallery-item img{
+  object-fit:contain;      /* cover = preenche e corta; contain = encaixa inteira, sem cortar */
+}
+
+
+/* ===========================
+   TIPOGRAFIA
+   Fontes utilizadas (imagens PNG)
+   =========================== */
+
+.gallery-grid.fonts .gallery-item{
+  aspect-ratio:4/3;      /* proporção de cada card de tipografia */
+  background:transparent;
+}
+
+.gallery-grid.fonts .gallery-item img{
+  object-fit:contain;      /* cover = preenche e corta; contain = encaixa inteira, sem cortar */
+}
+
+
+/* ===========================
+   STORIES
+   Faixa horizontal com rolagem, formato vertical (estilo Instagram Stories)
+   =========================== */
+
+.stories-track.stories{
+  gap:20px;                    /* espaço entre os stories */
+}
+
+.story-item{
+  width:min(230px, 62vw);      /* largura de cada story (encolhe em telas pequenas) */
+  aspect-ratio:9/16;           /* proporção vertical de cada story */
+}
+
+.story-item img{
+  object-fit:cover;            /* cover = preenche e corta; contain = encaixa inteira, sem cortar */
+}
+
+
+/* ===========================
+   HIGHLIGHTS
+   Destaques circulares fixados no perfil
+   =========================== */
+
+.highlights-track.highlights{
+  gap:28px;               /* espaço entre os destaques */
+}
+
+.highlight-circle{
+  width:104px;             /* largura do círculo */
+  height:104px;            /* altura do círculo */
+}
+
+.highlight-circle img{
+  object-fit:cover;        /* cover = preenche e corta; contain = encaixa inteira, sem cortar */
+}
+
+
+/* ===========================
+   PROFILE GALLERY
+   Múltiplas imagens de mockups lado a lado (componente próprio, modular)
+   =========================== */
+
+.profile-gallery{
+  display:flex; flex-wrap:nowrap; justify-content:center; align-items:flex-start;
+  gap:24px; padding:0 24px;
+}
+
+.profile-item{
+  position:relative; overflow:hidden; border-radius:var(--radius);
+  background:transparent; flex:0 0 auto;
+}
+
+.profile-item img{
+  width:100%; height:100%;
+  transform:scale(1.02); filter:saturate(.92);
+  transition:transform .8s var(--ease), filter .5s var(--ease);
+  object-fit:contain;
+}
+
+.profile-item:hover img{ transform:scale(1.08); filter:saturate(1.08); }
+
+/* Responsividade: largura base de cada mockup — DESKTOP */
+.profile-item{
+  width:280px; height:560px;  /* dimensões fixas (9:20) */
+}
+
+/* Tablet: reduz tamanho um pouco e gap */
+@media (max-width:1024px){
+  .profile-item{
+    width:240px; height:480px;
+  }
+  .profile-gallery{
+    gap:18px;
+  }
+}
+
+/* Mobile: permite quebra de linha elegante + reduz tamanho */
+@media (max-width:640px){
+  .profile-gallery{
+    flex-wrap:wrap;
+    gap:16px;
+    justify-content:center;
+    padding:0 16px;
+  }
+  .profile-item{
+    width:200px; height:400px;
+  }
+}
+
+
+/* ==========================================================================
+   OUTROS COMPONENTES
+   ========================================================================== */
+
+/* ---------- chip (reaproveita .filter-btn do NOWHERE) ---------- */
+.chip{
+  font-family:var(--mono); font-size:12px; letter-spacing:.06em; text-transform:uppercase;
+  color:var(--white-45); border:1px solid var(--white-10); padding:10px 20px;
+  border-radius:var(--radius-pill); display:inline-flex; align-items:center; gap:8px;
+}
+
+/* ---------- estados vazios de seção (sem imagens no array "imagens") ---------- */
+.section-empty{
+  font-family:var(--mono); font-size:13px; color:var(--white-45); padding:40px 0;
+}
