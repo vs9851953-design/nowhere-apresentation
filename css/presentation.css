@@ -44,9 +44,9 @@
 .slide.active .slide-sub{ opacity:1; transform:translateY(0); }
 
 /* ---------- etapa 1: capa ---------- */
-.slide-cover{ align-items:center; text-align:center; padding-top:0; }
+.slide-cover{ align-items:center; text-align:center; padding-top:0; gap:16px; }
 .cover-logo{
-  width:440px; height:440px; object-fit:contain; margin:0 auto 40px;
+  width:340px; height:auto; object-fit:contain; margin:0 auto 16px;
   opacity:0; transform:translateY(14px);
   transition:opacity .8s var(--ease), transform .8s var(--ease);
 }
