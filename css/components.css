@@ -111,7 +111,7 @@
    =========================== */
 
 .gallery-grid.feed .gallery-item{
-  aspect-ratio:3/4;      /* proporção de cada card do feed */
+  aspect-ratio:2/4;      /* proporção de cada card do feed */
 }
 
 .gallery-grid.feed .gallery-item img{
@@ -227,7 +227,7 @@
 }
 
 /* Mobile: permite quebra de linha elegante + reduz tamanho */
-@media (max-width:640px){
+@media (max-width:500px){
   .profile-gallery{
     flex-wrap:wrap;
     gap:16px;
@@ -235,7 +235,7 @@
     padding:0 16px;
   }
   .profile-item{
-    width:200px; height:400px;
+    width:200px; height:250px;
   }
 }
 
