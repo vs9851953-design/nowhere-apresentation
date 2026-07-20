@@ -27,7 +27,7 @@ const SECTION_RENDERERS = {
   feed: renderGridGallery,
   stories: renderStoriesTrack,
   destaques: renderHighlightsTrack,
-  perfil: renderSingleFrame,
+  perfil: renderProfileGallery,
   paleta: renderGridGallery,
   tipografia: renderGridGallery,
 };
