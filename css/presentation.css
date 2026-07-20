@@ -46,7 +46,7 @@
 /* ---------- etapa 1: capa ---------- */
 .slide-cover{ align-items:center; text-align:center; padding-top:0; }
 .cover-logo{
-  width:220px; height:220px; object-fit:contain; margin:0 auto 40px;
+  width:440px; height:440px; object-fit:contain; margin:0 auto 40px;
   opacity:0; transform:translateY(14px);
   transition:opacity .8s var(--ease), transform .8s var(--ease);
 }
