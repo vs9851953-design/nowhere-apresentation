@@ -125,7 +125,7 @@
    =========================== */
 
 .gallery-grid.colors .gallery-item{
-  aspect-ratio:16/9;      /* proporção de cada card da paleta */
+  aspect-ratio:4/3;      /* proporção de cada card da paleta */
   background:transparent;
 }
 
@@ -140,7 +140,7 @@
    =========================== */
 
 .gallery-grid.fonts .gallery-item{
-  aspect-ratio:16/9;      /* proporção de cada card de tipografia */
+  aspect-ratio:4/3;      /* proporção de cada card de tipografia */
   background:transparent;
 }
 
